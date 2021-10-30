@@ -194,12 +194,15 @@ func main() {
 
 ![status after append](./appenddatabase.png)
 
+### 删除关联 delete
+
+`Db.Model(&a).Association("Tag").Delete(&t)`
+
 ## Has one
 
 删掉上面建立的表重新进行自动迁移
 
 ```go
-
 package main
 
 import (
@@ -375,3 +378,7 @@ func main() {
 数据库:
 
 ![status after append](./appenddatabase2.png)
+
+### 删除关联 delete
+
+`Db.Model(&t).Association("Tag").Delete(&a)`
