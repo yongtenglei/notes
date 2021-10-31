@@ -1,0 +1,108 @@
+% !TeX program = xelatex
+\documentclass[11pt]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\setCJKmonofont{WenQuanYi Zen Hei Mono}
+
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\addtolength{\parskip}{3pt}
+
+
+\title{\LaTeX Notes}
+\author{Rey}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%\clearpage
+
+\section{入门}
+
+\subsection{文字}
+\subsection{断字处理}
+ulem 包改进了断字, 但是也改变了\{emph\}的行为, 成为了下划线. \{emph\} 周围是正体的话会成为斜体, 反之亦然.\\
+
+使用\textbackslash{usepackage}[normalem]\{ulem\} 恢复行为.\\
+
+\subsection{第一段缩进}
+使用\textbackslash{usepackage}\{indentfirst\} 使得第一段也缩进, 缩进距离可以使用 \textbackslash{parindent} 控制, \textbackslash{parskip}控制段落间的距离.\\
+
+\textbackslash{setlength}\{\textbackslash{parindent}\}\{2em\}
+
+\textbackslash{addtolength}\{\textbackslash{parindent}\}\{3pt\}\\
+
+\subsection{特殊段落}
+
+\subsubsection{原文打印 代码段等}
+
+使用 fancyvrb 和 listings (代码) 宏包.
+
+\subsubsection{注脚}
+
+\subsection{列表}
+
+\subsubsection{普通列表}
+
+无序列表: itemize
+
+有序列表: enumrate
+
+描述列表: description
+
+中间的item使用 \textbackslash{item} balabala
+
+描述列表需要 \textbackslash{item}[desc] balabala
+
+\subsubsection{压缩列表}
+
+使用paralist宏包
+
+无序列表: compactitem
+
+有序列表: compactenum
+
+描述列表: compactdesc
+
+\subsubsection{行间列表}
+
+使用paralist宏包
+
+无序列表: inparaitem
+
+有序列表: inparaenum
+
+描述列表: inparadesc
+
+\subsubsection{定制列表}
+
+\textbackslash{renewcommand}\{\textbackslash{labelitemi}\}\{-\}
+
+\textbackslash{renewcommand}\{\textbackslash{theenumi}\}\{\textbackslash{alph}\{enumi\}\}
+
+之后使用正常的列表, 即可改变行为.\\
+
+\fbox{\mbox{010 110 1110}
+\fbox{010 110 1110}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
