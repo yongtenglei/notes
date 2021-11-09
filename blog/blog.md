@@ -303,6 +303,32 @@ func main() {
 
 ## 编写 tag 接口
 
+### 写在前面
+
+返回错误时有两种方案:
+
+1. 定义 code, 并为 code 编写相对应的信息, 在业务的传递中, 传递 code 表示 错误的发生.
+
+如, code 100001 对应的消息为 tag 已存在而不能添加此 tag. 在业务的传递中, 返回 code 表示哪种类型的错误发生.
+
+2. 自定义 error, 传递 error 表示哪种类型的错误发生.
+
+笔者目前仍在学习, 定义 code,却在业务中传递 error,导致代码并不能很精确的描述错误发生的类型.希望读者注意.
+
+练习时, 可以将返回的 error 类型改为 code, 例如:
+
+```go
+func AddTag(name string) code {
+    exist := TagExistByName(name)
+    if exist { // 如果已存在此名称的 Tag
+        return code.TAG_ALREADY_EXIST // eg. code.TAG_ALREADY_EXIST = 100001
+    }
+
+    // dao 层
+    return code.SUCCESS // eg. code.SUCCESS = 200
+}
+```
+
 ### 定义 tag 的结构体
 
 ```go
@@ -786,31 +812,31 @@ func GetTags(c *gin.Context) {
 		return
 	}
 
-	var users []models.Tag
+	var tags []models.Tag
 
 	// 业务处理
-	users, err = logic.GetTags(page, size)
+	tags, err = logic.GetTags(page, size)
 	if err != nil {
 		util.ResposeWithError(c, e.ERROR)
 		return
 	}
 
 	// 返回
-	util.ResposeWithSuccessData(c, users)
+	util.ResposeWithSuccessData(c, tags)
 }
 
 //新增文章标签
 func AddTag(c *gin.Context) {
-	var user models.Tag
+	var tag models.Tag
 
 	// 获取参数, 校验参数
-	if err := c.ShouldBindJSON(&user); err != nil {
+	if err := c.ShouldBindJSON(&tag); err != nil {
 		util.ResposeWithError(c, e.INVALID_PARAMS)
 		return
 	}
 
 	// 业务处理
-	if err := logic.AddTag(&user); err != nil {
+	if err := logic.AddTag(&tag); err != nil {
 		util.ResposeWithError(c, e.ERROR)
 		return
 	}
@@ -895,27 +921,28 @@ package logic
 import (
 	"blog/dao/mysql"
 	"blog/models"
+	"errors"
 )
 
 func GetTags(page, size int) ([]models.Tag, error) {
-	var users []models.Tag
+	var tags []models.Tag
 	var err error
 
-	users, err = mysql.GetTags(page, size)
+	tags, err = mysql.GetTags(page, size)
 	if err != nil {
-		return users, err
+		return tags, err
 	}
 
-	return users, nil
+	return tags, nil
 }
 
-func AddTag(user *models.Tag) error {
-	_, err := mysql.TagExistByName(user.Name)
-	if err != nil {
-		return err
+func AddTag(tag *models.Tag) error {
+	_, err := mysql.TagExistByName(tag.Name)
+	if err == nil {
+		return errors.New("tag already exist")
 	}
 
-	err = mysql.AddTag(user)
+	err = mysql.AddTag(tag)
 	if err != nil {
 		return err
 	}
@@ -1017,11 +1044,12 @@ func GetTag(id int) (models.Tag, error) {
 	var err error
 
 	err = db.Model(&models.Tag{}).Where("id = ?", id).First(&tag).Error
-	if err != nil {
-		return models.Tag{}, err
+
+	if tag.ID > 0 {
+		return tag, nil
 	}
 
-	return tag, nil
+	return models.Tag{}, err
 }
 
 func EditTag(tag *models.Tag) error {
@@ -1081,3 +1109,350 @@ func DeleteTag(id int) error {
    ![deletetag](picture/deletetag.png)
 
 ## Article 接口
+
+### Article 模型
+
+```go
+package models
+
+import (
+	"blog/conf"
+	"time"
+
+	"gorm.io/gorm"
+)
+
+type Article struct {
+	gorm.Model
+	TagID      int    `json:"tag_id" gorm:"index"`
+	Tag        Tag    `json:"tag" gorm:"foreignkey:TagID"`
+	Title      string `json:"title"`
+	Desc       string `json:"desc"`
+	Content    string `json:"content"`
+	CreatedBy  string `json:"created_by"`
+	ModifiedBy string `json:"modified_by"`
+	State      int    `json:"state"`
+}
+
+// TableName 会将 Tag 的表名重写为 `prefix+article`
+func (Article) TableName() string {
+	return conf.Conf.MysqlConf.TablePrefix + "article"
+}
+
+func (*Article) BeforeCreate(tx *gorm.DB) error {
+	tx.Set("CreatedOn", time.Now().Unix())
+	return nil
+}
+
+func (*Article) BeforeUpdate(tx *gorm.DB) (err error) {
+	tx.Set("ModifiedOn", time.Now().Unix())
+	return nil
+}
+```
+
+Article 模型可以与 Tag 模型形成 belongs to 的关系, gorm:"foreignkey:TagID"的 tag, 指定 TagID 为外键, reference 为 Tag 表中的 ID 字段.
+
+### controller 层
+
+```go
+package v1
+
+import (
+	"blog/conf"
+	"blog/logic"
+	"blog/models"
+	"blog/pkg/e"
+	"blog/pkg/util"
+
+	"github.com/gin-gonic/gin"
+)
+
+//获取多个文章
+func GetArticles(c *gin.Context) {
+	page := util.GetPage(c)
+	size, err := util.StrToInt(c.DefaultQuery("size", util.IntToStr(conf.Conf.AppConf.PageSize)))
+	if err != nil {
+		code := e.INVALID_PARAMS
+		util.ResposeWithError(c, code)
+		return
+	}
+
+	var articles []models.Article
+
+	// 业务处理
+	articles, err = logic.GetArticles(page, size)
+	if err != nil {
+		util.ResposeWithError(c, e.ERROR)
+		return
+	}
+
+	// 返回
+	util.ResposeWithSuccessData(c, articles)
+}
+
+//新增文章
+func AddArticle(c *gin.Context) {
+	var article models.Article
+
+	// 获取参数, 校验参数
+	if err := c.ShouldBindJSON(&article); err != nil {
+		util.ResposeWithError(c, e.INVALID_PARAMS)
+		return
+	}
+
+	// 业务处理
+	if err := logic.AddArticle(&article); err != nil {
+		util.ResposeWithError(c, e.ERROR)
+		return
+	}
+
+	// 返回
+	util.ResposeWithSuccess(c)
+}
+
+//获取特定id的文章
+func GetArticle(c *gin.Context) {
+	id, err := util.StrToInt(c.Param("id"))
+	if err != nil {
+		util.ResposeWithError(c, e.INVALID_PARAMS)
+		return
+	}
+
+	var tag models.Article
+	tag, err = logic.GetArticle(id)
+	if err != nil {
+		util.ResposeWithError(c, e.ERROR)
+		return
+	}
+
+	util.ResposeWithSuccessData(c, tag)
+}
+
+//修改文章
+func EditArticle(c *gin.Context) {
+	id, err := util.StrToInt(c.Param("id"))
+	if err != nil {
+		util.ResposeWithError(c, e.INVALID_PARAMS)
+		return
+	}
+
+	var article models.Article
+	err = c.ShouldBindJSON(&article)
+	if err != nil {
+		util.ResposeWithError(c, e.INVALID_PARAMS)
+		return
+	}
+
+	article.ID = uint(id)
+
+	err = logic.EditArticle(&article)
+	if err != nil {
+		util.ResposeWithError(c, e.ERROR)
+		return
+	}
+
+	util.ResposeWithSuccess(c)
+
+}
+
+//删除文章
+func DeleteArticle(c *gin.Context) {
+	id, err := util.StrToInt(c.Param("id"))
+	if err != nil {
+		util.ResposeWithError(c, e.INVALID_PARAMS)
+		return
+	}
+
+	err = logic.DeleteArticle(id)
+	if err != nil {
+		util.ResposeWithError(c, e.ERROR)
+		return
+	}
+
+	util.ResposeWithSuccess(c)
+}
+
+```
+
+### logic 层
+
+```go
+package logic
+
+import (
+	"blog/dao/mysql"
+	"blog/models"
+)
+
+func GetArticles(page, size int) ([]models.Article, error) {
+	var articles []models.Article
+	var err error
+
+	articles, err = mysql.GetArticles(page, size)
+	if err != nil {
+		return articles, err
+	}
+
+	return articles, nil
+}
+
+func AddArticle(article *models.Article) error {
+	err := mysql.AddArticle(article)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func GetArticle(id int) (models.Article, error) {
+	var article models.Article
+	var err error
+
+	article, err = mysql.GetArticle(id)
+	if err != nil {
+		return models.Article{}, err
+	}
+
+	return article, nil
+}
+
+func EditArticle(article *models.Article) error {
+
+	// 查看是否存在
+	_, err := mysql.ArticleExistByID(int(article.ID))
+	if err != nil {
+		return err
+	}
+
+	return mysql.EditArticle(article)
+}
+
+func DeleteArticle(id int) error {
+	// 查看是否存在
+	_, err := mysql.ArticleExistByID(id)
+	if err != nil {
+		return err
+	}
+
+	return mysql.DeleteArticle(id)
+
+}
+
+```
+
+### dao 层
+
+```go
+package mysql
+
+import "blog/models"
+
+func GetArticles(page, size int) ([]models.Article, error) {
+
+	var articles []models.Article
+	var err error
+
+	err = db.Model(&models.Article{}).Preload("Tag").Offset(page).Limit(size).Find(&articles).Error
+	if err != nil {
+		return []models.Article{}, err
+	}
+
+	return articles, nil
+}
+
+func AddArticle(article *models.Article) error {
+
+	return db.Model(&models.Article{}).Create(&article).Error
+
+}
+
+func ArticleExistByID(id int) (models.Article, error) {
+	var article models.Article
+	var err error
+
+	err = db.Model(&models.Article{}).Where("id = ?", id).First(&article).Error
+
+	if article.ID > 0 {
+		return article, nil
+	}
+
+	return models.Article{}, err
+}
+
+func GetArticle(id int) (models.Article, error) {
+
+	var article models.Article
+	var err error
+
+	err = db.Model(&models.Article{}).Preload("Tag").Where("id = ?", id).First(&article).Error
+	if err != nil {
+		return models.Article{}, err
+	}
+
+	return article, nil
+}
+
+func EditArticle(article *models.Article) error {
+
+	// update 操作最好使用 map, 只更新所要求更新的字段.
+	// 更详细的信息查看官方文档
+
+	// 更新操作不涉及created_by, 如果尝试更新会被忽略
+	var a = make(map[string]interface{})
+	a["tag_id"] = article.TagID
+	a["title"] = article.Title
+	a["desc"] = article.Desc
+	a["content"] = article.Content
+	a["modified_by"] = article.ModifiedBy
+
+	err := db.Model(&models.Article{}).Where("id = ?", article.ID).Updates(a).Error
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func DeleteArticle(id int) error {
+
+	return db.Delete(&models.Article{}, id).Error
+}
+
+```
+
+所有的逻辑和 Tag 的逻辑基本相同, 需要注意的是一般不允许有相同名称的标签出现, 而 文章则没有这种限制, 允许相同标题的文章出现.
+
+### 接口测试
+
+1. GetArticles 查询所有文章
+
+   ![getallarticle](picture/article/getallarticle11.png)
+
+   同样实现了分页功能
+
+2. AddArticle 添加文章
+
+   ![addaarticle](picture/article/addarticle.png)
+
+3. GetArticle 查询特定 id 的文章
+
+   ![getaarticle](picture/article/getaarticle.png)
+
+4. EditArticle 更改文章
+
+   ![editarticle](picture/article/editarticle.png)
+
+5. DeleteArticle 删除文章
+
+   ![deletearticle](picture/article/deleteartcile.png)
+
+6. 数据库
+
+   ![afterdatabase](picture/article/afterdatabase.png)
+
+至此, Article 接口实现完毕.
+
+### 目录树
+
+<div align=center><img src="picture/article/tree.png" width="  "></div>
