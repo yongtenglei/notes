@@ -1,0 +1,46 @@
+syntax = "proto3"; // 使用proto3 编译
+
+package person; // proto 方法的包
+
+option go_package="github/learn-proto/pb/person;person"; // 完整路径 ; 别名
+
+message Person {
+  string name = 1;
+  int32 age = 2;
+  enum Gender{ // 枚举 必须有0值
+    option allow_alias = true; // 允许枚举有相同值
+    MAN = 0;
+    MALE = 0;
+    WOMAN = 1;
+    FEMALE = 1;
+    OTHER = 2;
+  }
+  Gender gender = 3;
+  repeated string testSlice = 4; // 切片
+  map <string, string> testMap = 5; // map <key:int/string, value: any type>
+
+  //reserved "testSlice", "testMap"; // 保留字
+  //reserved 4, 5;
+
+}
+
+// message 嵌套
+message Home {
+  repeated Person persons = 1;
+
+  message Visitor {
+    string name = 1;
+  }
+
+  Visitor visitor = 2;
+
+}
+
+
+service SearchPersonService {
+  //  四种方法
+  rpc Search(Person) returns (Person);
+  rpc StreamSearch(stream Person) returns (Person);
+  rpc SearchStream(Person) returns (stream Person);
+  rpc StreamSearchStream(stream Person) returns (stream Person);
+}

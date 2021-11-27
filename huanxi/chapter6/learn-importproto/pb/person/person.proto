@@ -1,0 +1,22 @@
+syntax = "proto3"; // 使用proto3 编译
+
+package person; // proto 方法的包
+
+option go_package="github/learn-proto/pb/person;person"; // 完整路径 ; 别名
+
+import "google/protobuf/empty.proto";
+
+message PersonReq {
+  string name = 1;
+  int32 age = 2;
+}
+
+message PersonRes {
+  string name = 1;
+  int32 age = 2;
+}
+
+service SearchService {
+  rpc alive(google.protobuf.Empty) returns (PersonRes);
+
+}

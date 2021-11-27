@@ -669,7 +669,7 @@ db.Delete(&users, []int{1,2,3})
 
 ⚠️ :
 
-1. GORM 推荐使用软删除, 如果模型中有 gorm.DeletedAt, 则自动进行软删除.
+    1. GORM 推荐使用软删除, 如果模型中有 gorm.DeletedAt, 则自动进行软删除.
 
 给模型添加软删除:
 
@@ -681,14 +681,14 @@ type User struct {
 }
 ```
 
-2. 查询软删除的数据 Unscoped()
+    2. 查询软删除的数据 Unscoped()
 
 ```go
 db.Unscoped().Where("age = 20").Find(&users)
 // SELECT * FROM users WHERE age = 20;
 ```
 
-3. 不使用软删除 Unscoped()
+    3. 不使用软删除 Unscoped()
 
 ```go
 db.Unscoped().Delete(&order)

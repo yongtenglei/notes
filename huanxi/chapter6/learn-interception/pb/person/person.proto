@@ -1,0 +1,25 @@
+syntax = "proto3"; // 使用proto3 编译
+
+package person; // proto 方法的包
+
+option go_package="github/learn-proto/pb/person;person"; // 完整路径 ; 别名
+
+message PersonReq {
+  string name = 1;
+  int32 age = 2;
+}
+
+message PersonRes {
+  string name = 1;
+  int32 age = 2;
+}
+
+service SearchService {
+  //  四种方法
+  rpc Search(PersonReq) returns (PersonRes);
+  rpc StreamSearch(stream PersonReq) returns (PersonRes);
+  rpc SearchStream(PersonReq) returns (stream PersonRes);
+  rpc StreamSearchStream(stream PersonReq) returns (stream PersonRes);
+
+  rpc TestMeta(PersonReq) returns (PersonRes);
+}
