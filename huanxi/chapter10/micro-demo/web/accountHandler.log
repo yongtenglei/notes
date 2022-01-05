@@ -1,0 +1,158 @@
+{"level":"info","ts":1640151310.2508502,"caller":"web/main.go:60","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640151310.2522185,"caller":"web/main.go:66","msg":"Server exiting"}
+{"level":"info","ts":1640151444.1300876,"caller":"routers/login.go:49","msg":"AccountListHandler GetAccountByMobile filed: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp [::1]:9409: connect: connection refused\""}
+{"level":"info","ts":1640151540.4915576,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640151540.4929295,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640154332.1142054,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640154449.301573,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640154449.303997,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640154450.6998549,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640154792.294225,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640154792.2955859,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640154793.7608082,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640155032.6214132,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640155032.6238286,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640155034.1319501,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640155062.696801,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640155062.699183,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640679641.8142688,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640679649.443937,"caller":"web/main.go:78","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640679649.4454,"caller":"web/main.go:84","msg":"Server exiting"}
+{"level":"info","ts":1640679770.6224225,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640679789.3067443,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640679789.3082387,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640679797.6979942,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640679805.4196177,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640679805.4212275,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640679850.203348,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640679925.422309,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640679925.4239147,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640680262.6751041,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640680354.2098832,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640680354.2121665,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640681054.2231371,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640681230.4732563,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640681230.4748404,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640681297.8141913,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640681435.4155521,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640681435.4170563,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640681640.4136431,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640681674.5468454,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640681674.5483036,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640681696.6123157,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640681727.6104016,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640681727.6119275,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640681821.6586199,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640681826.112,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640681826.1133857,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640681856.3553293,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640681868.5886598,"caller":"web/main.go:79","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640681868.590178,"caller":"web/main.go:85","msg":"Server exiting"}
+{"level":"info","ts":1640681929.7624652,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640681936.177227,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640681936.179079,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640682117.640956,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640682129.6184,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640682129.6198275,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640682357.0931299,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640682373.1255422,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640682373.1280851,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640682696.6632671,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640682721.7724876,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640682721.7740948,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640682736.1406264,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640682740.1834872,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640682740.183702,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640682769.7434726,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640682773.6856248,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640682773.6859388,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640682828.822265,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640682859.3496583,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640682859.351147,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640682938.1273932,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640683145.6571794,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640683145.6586394,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640683315.6390095,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640683340.4340436,"caller":"web/main.go:104","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640683340.435554,"caller":"web/main.go:110","msg":"Server exiting"}
+{"level":"info","ts":1640683349.0746047,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640683410.0481875,"caller":"web/main.go:104","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640683410.0496483,"caller":"web/main.go:110","msg":"Server exiting"}
+{"level":"info","ts":1640683411.8820229,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640683763.3589706,"caller":"web/main.go:104","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640683763.360493,"caller":"web/main.go:110","msg":"Server exiting"}
+{"level":"info","ts":1640683801.9478204,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640683881.599921,"caller":"web/main.go:104","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640683881.601607,"caller":"web/main.go:110","msg":"Server exiting"}
+{"level":"info","ts":1640683898.1873443,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640683945.4367087,"caller":"web/main.go:104","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640683945.4368567,"caller":"web/main.go:110","msg":"Server exiting"}
+{"level":"info","ts":1640683963.659202,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640683985.9759712,"caller":"web/main.go:104","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640683985.977521,"caller":"web/main.go:110","msg":"Server exiting"}
+{"level":"info","ts":1640683988.0447195,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640684082.579263,"caller":"web/main.go:104","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640684082.5807905,"caller":"web/main.go:110","msg":"Server exiting"}
+{"level":"info","ts":1640684085.8324683,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640684118.8802097,"caller":"web/main.go:104","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640684118.882492,"caller":"web/main.go:110","msg":"Server exiting"}
+{"level":"info","ts":1640684149.0251975,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640684338.34816,"caller":"web/main.go:107","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640684338.3496857,"caller":"web/main.go:113","msg":"Server exiting"}
+{"level":"info","ts":1640684340.5558763,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640765640.9415107,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640766294.935935,"caller":"web/main.go:107","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640766294.9375148,"caller":"web/main.go:113","msg":"Server exiting"}
+{"level":"info","ts":1640766582.9677014,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640766598.232403,"caller":"web/main.go:73","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640766598.2338288,"caller":"web/main.go:79","msg":"Server exiting"}
+{"level":"info","ts":1640766898.825736,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640766915.3369184,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640766915.3384376,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640766983.9480748,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640767462.4209309,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640767462.4224143,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640767464.3050964,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640767543.1047225,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640767543.1050198,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640767544.9044833,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640767645.8169708,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640767645.8183885,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640767647.686448,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640937982.2549036,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640937998.4742568,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640937998.475803,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640938097.2150548,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640938122.354426,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640938122.355984,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640938163.8473005,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640938214.0354872,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640938214.0369802,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640938228.9814136,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640938247.1309927,"caller":"web/main.go:80","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640938247.132707,"caller":"web/main.go:86","msg":"Server exiting"}
+{"level":"info","ts":1640938972.8049314,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640938990.9135077,"caller":"web/main.go:83","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640938990.915045,"caller":"web/main.go:89","msg":"Server exiting"}
+{"level":"info","ts":1640939007.5773368,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640939014.591757,"caller":"web/main.go:83","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640939014.5942907,"caller":"web/main.go:89","msg":"Server exiting"}
+{"level":"info","ts":1640940038.0153997,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640940051.824199,"caller":"web/main.go:85","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640940051.8257122,"caller":"web/main.go:91","msg":"Server exiting"}
+{"level":"info","ts":1641030105.6372337,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1641030895.3468688,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1641030903.7925045,"caller":"web/main.go:83","msg":"Shutdown Server ..."}
+{"level":"info","ts":1641030903.793883,"caller":"web/main.go:89","msg":"Server exiting"}
+{"level":"info","ts":1641030906.5162797,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1641031119.4982743,"caller":"routers/account.go:43","msg":"AccountListHandler ServicesWithFilter filed: Unexpected response code: 500 (Failed to create boolean expression evaluator: 1:15 (14): no match found, expected: \"!=\", \".\", \"==\", \"[\", [ \\t\\r\\n] or [a-zA-Z0-9_])"}
+{"level":"info","ts":1641031140.9448504,"caller":"routers/account.go:43","msg":"AccountListHandler ServicesWithFilter filed: Unexpected response code: 500 (Failed to create boolean expression evaluator: 1:15 (14): no match found, expected: \"!=\", \".\", \"==\", \"[\", [ \\t\\r\\n] or [a-zA-Z0-9_])"}
+{"level":"info","ts":1641031181.9003727,"caller":"routers/account.go:43","msg":"AccountListHandler ServicesWithFilter filed: Unexpected response code: 500 (Failed to create boolean expression evaluator: 1:15 (14): no match found, expected: \"!=\", \".\", \"==\", \"[\", [ \\t\\r\\n] or [a-zA-Z0-9_])"}
+{"level":"info","ts":1641031275.069078,"caller":"web/main.go:83","msg":"Shutdown Server ..."}
+{"level":"info","ts":1641031275.07055,"caller":"web/main.go:89","msg":"Server exiting"}
+{"level":"info","ts":1641031330.588382,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1641031339.0531971,"caller":"web/main.go:83","msg":"Shutdown Server ..."}
+{"level":"info","ts":1641031339.054706,"caller":"web/main.go:89","msg":"Server exiting"}
+{"level":"info","ts":1641031361.049005,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1641107703.1089516,"caller":"web/main.go:83","msg":"Shutdown Server ..."}
+{"level":"info","ts":1641107703.1104105,"caller":"web/main.go:89","msg":"Server exiting"}

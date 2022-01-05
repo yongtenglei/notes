@@ -1,0 +1,17 @@
+{"level":"info","ts":1640151310.2508502,"caller":"web/main.go:60","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640151310.2522185,"caller":"web/main.go:66","msg":"Server exiting"}
+{"level":"info","ts":1640151444.1300876,"caller":"routers/login.go:49","msg":"AccountListHandler GetAccountByMobile filed: rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing dial tcp [::1]:9409: connect: connection refused\""}
+{"level":"info","ts":1640151540.4915576,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640151540.4929295,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640154332.1142054,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640154449.301573,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640154449.303997,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640154450.6998549,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640154792.294225,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640154792.2955859,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640154793.7608082,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640155032.6214132,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640155032.6238286,"caller":"web/main.go:69","msg":"Server exiting"}
+{"level":"info","ts":1640155034.1319501,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640155062.696801,"caller":"web/main.go:63","msg":"Shutdown Server ..."}
+{"level":"info","ts":1640155062.699183,"caller":"web/main.go:69","msg":"Server exiting"}

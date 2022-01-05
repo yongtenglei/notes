@@ -1,0 +1,2 @@
+{"level":"info","ts":1639042383.307867,"caller":"global/main.go:21","msg":"global logger"}
+{"level":"info","ts":1639042383.3079247,"caller":"global/main.go:22","msg":"global suger logger"}

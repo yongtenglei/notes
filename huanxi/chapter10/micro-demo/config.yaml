@@ -1,0 +1,17 @@
+web_server:
+  name: "account_server"
+  host: "192.168.1.7"
+  port: 9409
+  tags:
+    - account
+    - server-
+
+
+web_client:
+  name: "account_client"
+  host: "192.168.1.7"
+  port: 9410
+  id: 1
+  tags:
+    - account
+    - client

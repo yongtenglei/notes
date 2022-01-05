@@ -1,0 +1,5 @@
+{"level":"info","ts":1640153661.0856433,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640154330.3984149,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640154446.882519,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640154790.2979605,"caller":"redis/redis.go:25","msg":"redis init ok"}
+{"level":"info","ts":1640155038.9264474,"caller":"redis/redis.go:25","msg":"redis init ok"}

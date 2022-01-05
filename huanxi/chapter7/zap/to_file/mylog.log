@@ -1,0 +1,3 @@
+{"level":"info","ts":1639041594.2482123,"caller":"to_file/main.go:21","msg":"from info","status":"ok","code":200}
+{"level":"info","ts":1639041662.9858823,"caller":"to_file/main.go:21","msg":"from info","status":"ok","code":200}
+{"level":"info","ts":1639041666.5249786,"caller":"to_file/main.go:21","msg":"from info","status":"ok","code":200}
