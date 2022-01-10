@@ -1,0 +1,89 @@
+syntax="proto3";
+
+package account;
+
+option go_package="/proto/account;account"; // 完整路径 ; 别名
+
+service AccountService{
+  rpc GetAccountList(PagingReq) returns (AccountListRes);
+  rpc GetAccountByMobile(MobileReq) returns (MobileRes);
+  rpc GetAccountByID(IDReq) returns (IDRes);
+  rpc AddAccount(AddAccountReq) returns (AddAccountRes);
+  rpc UpdateAccount(UpdateAccountReq) returns (UpdateAccountRes);
+  rpc CheckAccountByID(CheckAccountByIDReq) returns (CheckAccountByIDRes);
+  rpc DeleceAccount(DeleteAccountReq) returns (DeleteAccountRes);
+}
+
+message PagingReq {
+  uint32 pageNo=1;
+  uint32 pageSize=2;
+}
+
+message AccountInfo {
+  int64 id=1;
+  string mobile=2;
+  string password=3;
+  string username=4;
+  string gender=5;
+  uint32 role=6;
+}
+
+message AccounttRes {
+  AccountInfo account=1;
+}
+
+message AccountListRes {
+  int32 total=1;
+  repeated AccountInfo accountList=2;
+}
+
+message MobileReq {
+  string mobile=1;
+}
+
+message MobileRes {
+  AccountInfo account=1;
+}
+
+message IDReq {
+  int64 id=1;
+}
+
+message IDRes {
+  AccountInfo account=1;
+}
+
+message AddAccountReq {
+  AccountInfo account=1;
+}
+
+message AddAccountRes {
+  bool ok=1;
+}
+
+message UpdateAccountReq {
+  AccountInfo account=1;
+}
+
+message UpdateAccountRes {
+  bool ok=1;
+}
+
+message CheckAccountByIDReq {
+  int64 id=1;
+  string password=2;
+}
+
+message CheckAccountByIDRes {
+  bool ok=1;
+}
+
+
+message DeleteAccountReq {
+  int64 id=1;
+  string password=2;
+}
+
+message DeleteAccountRes {
+  bool ok=1;
+}

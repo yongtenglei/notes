@@ -1,0 +1,24 @@
+2022-01-08T13:51:21.135+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"account_srv","group":"development","tenant":"ae91b401-1490-4b03-a2bc-5e7e088c4e95"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-01-08T13:51:21.138+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"account_srv","group":"development","tenant":"ae91b401-1490-4b03-a2bc-5e7e088c4e95"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-01-08T13:51:21.142+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"account_srv","group":"development","tenant":"ae91b401-1490-4b03-a2bc-5e7e088c4e95"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-01-08T13:51:21.142+0800	[34mINFO[0m	get config from server error:[404] config data not exist
+ 
+2022-01-08T13:51:21.142+0800	[33mWARN[0m	[client.GetConfig] config not found, dataId: account_srv, group: development, namespaceId: ae91b401-1490-4b03-a2bc-5e7e088c4e95.
+2022-01-08T13:51:24.477+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"account_srv","group":"development","tenant":"ae91b401-1490-4b03-a2bc-5e7e088c4e95"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-01-08T13:51:24.481+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"account_srv","group":"development","tenant":"ae91b401-1490-4b03-a2bc-5e7e088c4e95"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-01-08T13:51:24.490+0800	[31mERROR[0m	api</v1/cs/configs>,method:<GET>, params:<{"dataId":"account_srv","group":"development","tenant":"ae91b401-1490-4b03-a2bc-5e7e088c4e95"}>, call domain error:<[404] config data not exist
+> , result:<config data not exist
+>
+2022-01-08T13:51:24.490+0800	[34mINFO[0m	get config from server error:[404] config data not exist
+ 
+2022-01-08T13:51:24.490+0800	[33mWARN[0m	[client.GetConfig] config not found, dataId: account_srv, group: development, namespaceId: ae91b401-1490-4b03-a2bc-5e7e088c4e95.

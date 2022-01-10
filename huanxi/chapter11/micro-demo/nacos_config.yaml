@@ -1,0 +1,5 @@
+host: '192.168.1.8'
+namespace: 'ae91b401-1490-4b03-a2bc-5e7e088c4e95'
+data_id: 'config'
+group: 'development'
+port: 8848
